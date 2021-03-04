@@ -1,0 +1,26 @@
+@import "../../../styles/colors";
+
+.genres {
+  display: flex;
+  justify-content: space-between;
+
+  width: 400px;
+
+  color: $default-text-color;
+  list-style-type: none;
+  font-size: 18px;
+
+  .genre {
+    padding-bottom: 15px;
+    cursor: pointer;
+    margin-bottom: -2px;
+
+    &.selected {
+      border-bottom: 2px solid $primary-color;
+    }
+
+    &:hover {
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+}

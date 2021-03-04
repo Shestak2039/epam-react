@@ -1,9 +1,11 @@
 $background-theme: #555555;
 $shadow: #000000;
 $main-theme: #232323;
+$primary-color: #F65261;
+$secondary-color: $background-theme;
 
-$primary-button: #F65261;
+$primary-button: $primary-color;
 $default-button: #FFFFFFE6;
 
 $default-text-color: #ffffff;
-$pink-text-color: $primary-button;
+$pink-text-color: $primary-color;

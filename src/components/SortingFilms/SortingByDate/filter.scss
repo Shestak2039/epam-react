@@ -1,0 +1,27 @@
+@import "../../../styles/colors";
+
+.filter {
+  display: flex;
+  align-items: center;
+
+  padding-bottom: 20px;
+
+  font-weight: bold;
+
+  .filter-name {
+    font-size: 18px;
+    color: $secondary-color;
+    margin-right: 30px;
+  }
+
+  .filter-select {
+    border: 0;
+    background-color: #00000000;
+    color: $default-text-color;
+    font-size: 16px;
+
+    .filter-select-option {
+      color: $secondary-color;
+    }
+  }
+}
