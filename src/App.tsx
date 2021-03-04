@@ -1,7 +1,12 @@
 import React from 'react';
 
+import Header from './components/Header/Header';
+import Wrapper from './components/Wrapper/Wrapper';
+
 const App: React.FunctionComponent = () => (
-    <h1>Hello world</h1>
+    <Wrapper>
+        <Header />
+    </Wrapper>
 );
 
 export default App;
