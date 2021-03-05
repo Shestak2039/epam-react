@@ -1,0 +1,18 @@
+@import "../../styles/colors";
+
+.films-wrapper {
+  padding-top: 15px;
+
+  .count-movies {
+    font-size: 18px;
+    color: $default-text-color;
+  }
+
+  .films {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+
+    margin-top: 15px;
+  }
+}

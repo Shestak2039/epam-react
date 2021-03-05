@@ -1,0 +1,68 @@
+@import "../../../styles/colors";
+
+.film-wrapper {
+  cursor: pointer;
+  transition: all 0.5s;
+
+  position: relative;
+
+  &:hover {
+    transition: all 0.5s;
+    transform: scale(1.05);
+
+    .additional-info-icon {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+
+      width: 30px;
+      height: 30px;
+
+      color: $default-text-color;
+      background-color: $main-theme;
+      border-radius: 100%;
+
+      &:after {
+        content: '\2807';
+
+        position: absolute;
+        left: 10px;
+        top: 1px;
+
+        font-size: 20px;
+      }
+    }
+  }
+
+  .film-info {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 10px;
+
+    color: $default-text-color;
+
+    &-left {
+      &-title {
+        font-weight: bold;
+      }
+
+      &-genres {
+        font-size: 14px;
+        color: $pink-text-color;
+
+        margin-top: 10px;
+      }
+    }
+
+    &-right {
+      &-year {
+        font-size: 15px;
+
+        border: 1px solid $secondary-color;
+
+        padding: 5px;
+      }
+    }
+  }
+}
