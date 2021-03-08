@@ -1,0 +1,15 @@
+@import "../../../styles/colors";
+
+.label {
+  color: $primary-color;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 100%;
+  font-size: 20px;
+  background-color: $input-color;
+  border: 0;
+  color: #ffffff;
+  padding: 10px;
+}

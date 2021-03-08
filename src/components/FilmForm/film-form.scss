@@ -1,0 +1,35 @@
+@import "../../styles/colors";
+
+.film-form {
+  padding: 40px;
+  width: 500px;
+
+  .header-title {
+    color: $default-text-color;
+    margin-bottom: 20px;
+  }
+
+  .form {
+    .form-element {
+      margin-top: 10px;
+    }
+
+    .input {
+      width: 100%;
+
+      .MuiFormLabel-root {
+        color: $default-text-color;
+      }
+
+      .MuiInputBase-input {
+        color: $default-text-color;
+      }
+    }
+  }
+}
+
+.buttons-area {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
