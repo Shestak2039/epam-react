@@ -1,0 +1,17 @@
+@import "../../styles/colors";
+
+.delete-film-form {
+  padding: 40px;
+  width: 500px;
+  color: $default-text-color;
+}
+
+.confirm-text {
+  margin-top: 25px;
+}
+
+.buttons-area {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
