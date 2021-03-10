@@ -51,8 +51,6 @@ const App: React.FunctionComponent = () => {
         }
 
         setFilms(resultFilms);
-
-        console.log(mockFilms)
     };
 
     return (
