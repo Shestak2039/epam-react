@@ -5,31 +5,44 @@ import './sorting-films.scss';
 import SortingByGenre, { GenreModel } from './SortingByGenre/SortingByGenre';
 import Filter, { SortOptionModel } from './SortingByDate/Filter';
 
-const mockGenres: GenreModel[] = [
+export interface SortingFilmsProps {
+    sortFilms: (filter: GenreModel | undefined, sort: SortOptionModel | undefined) => void;
+}
+
+let mockGenres: GenreModel[] = [
     {id: 1, name: 'ALL', isSelected: true},
     {id: 2, name: 'DOCUMENTARY', isSelected: false},
-    {id: 3, name: 'COMEDY', isSelected: false},
+    {id: 3, name: 'DRAMA', isSelected: false},
     {id: 4, name: 'HORROR', isSelected: false},
-    {id: 5, name: 'CRIME', isSelected: false}
+    {id: 5, name: 'THRILLER', isSelected: false}
 ];
 
-const mockOptions: SortOptionModel[] = [
-    {id: 1, name: 'RELEASE DATE', isSelected: true},
-    {id: 2, name: 'RATING', isSelected: false},
-    {id: 3, name: 'YEAR', isSelected: false},
+let mockOptions: SortOptionModel[] = [
+    {id: 1, name: 'NAME', isSelected: true},
+    {id: 2, name: 'YEAR', isSelected: false},
 ];
 
-const SortingFilms: React.FunctionComponent = () => {
+const SortingFilms: React.FunctionComponent<SortingFilmsProps> = ({sortFilms}) => {
     const [genres, setGenres] = useState(mockGenres);
 
     const changeSelectedGenre = (newSelectedId: number) => {
-        setGenres(genres.map(genre => ({...genre, isSelected: newSelectedId === genre.id})));
+        const newGenres = genres.map(genre => ({...genre, isSelected: newSelectedId === genre.id}));
+
+        mockGenres = newGenres;
+        setGenres(newGenres);
+
+        sortFilms(newGenres.find(genre => genre.isSelected), options.find(option => option.isSelected));
     };
 
     const [options, setOptions] = useState(mockOptions);
 
     const changeSelectedOption = (newSelectedId: number) => {
-        setOptions(options.map(option => ({...option, isSelected: newSelectedId === option.id})));
+        const newOptions = options.map(option => ({...option, isSelected: newSelectedId === option.id}));
+
+        mockOptions = newOptions;
+        setOptions(newOptions);
+
+        sortFilms(genres.find(genre => genre.isSelected), newOptions.find(option => option.isSelected));
     };
 
     return (

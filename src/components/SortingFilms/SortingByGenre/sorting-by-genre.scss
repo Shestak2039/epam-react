@@ -4,8 +4,6 @@
   display: flex;
   justify-content: space-between;
 
-  width: 400px;
-
   color: $default-text-color;
   list-style-type: none;
   font-size: 18px;
@@ -21,6 +19,10 @@
 
     &:hover {
       border-bottom: 2px solid $primary-color;
+    }
+
+    &:not(:last-child) {
+      margin-right: 15px;
     }
   }
 }

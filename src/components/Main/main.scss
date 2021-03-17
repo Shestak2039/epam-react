@@ -1,6 +1,8 @@
 @import "../../styles/colors";
 
 .main {
+  flex: 1;
+
   background-color: $main-theme;
 
   padding: 20px 40px 40px;
