@@ -1,0 +1,77 @@
+@import "../../../styles/colors";
+
+.header-top {
+  display: flex;
+  justify-content: flex-end;
+
+  margin: 0 30px;
+}
+
+.header-background {
+  height: 100%;
+  width: 100%;
+  background-color: #000000BB;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  color: $default-text-color;
+}
+
+.header-film {
+  display: flex;
+
+  margin: 20px 90px;
+
+  .header-film-image {
+    margin-right: 40px;
+  }
+
+  .header-film-info-title-and-rating {
+    display: flex;
+
+    .header-film-info-title {
+      font-size: 36px;
+
+      margin-right: 10px;
+    }
+
+    .header-film-info-rating {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 35px;
+      height: 35px;
+
+      padding: 5px;
+
+      border: 1px solid $default-text-color;
+      border-radius: 61%;
+
+      font-size: 20px;
+      color: $rating-text-color;
+    }
+  }
+
+  .header-film-info-genres {
+    color: $film-details-color;
+  }
+
+  .header-film-info-year-and-duration {
+    display: flex;
+
+    margin: 15px 0;
+
+    font-size: 24px;
+    color: $pink-text-color;
+
+    .header-film-info-year {
+      margin-right: 25px;
+    }
+  }
+
+  .header-film-info-overview {
+    color: $film-details-color;
+  }
+}

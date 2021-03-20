@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import './film-card.scss';
+
 import { Menu, MenuItem } from '@material-ui/core';
 import Modal from '../../common/Modal/Modal';
 import FilmForm from '../../FilmForm/FilmForm';
 import DeleteFilmModal from '../../DeleteFilmForm/DeleteFilmModal';
+
+import { useModal } from '../../../custom-hooks/modal.hook';
 
 export interface FilmCardModel {
     id: number;
@@ -12,13 +15,17 @@ export interface FilmCardModel {
     genres: string[];
     year: number;
     imageUrl: string;
+    rating: number;
+    durationInMinutes: number;
+    overview: string;
 }
 
 export interface FilmCardProps {
     film: FilmCardModel;
+    openPage: (id: number) => void;
 }
 
-const FilmCard: React.FunctionComponent<FilmCardProps> = ({film}) => {
+const FilmCard: React.FunctionComponent<FilmCardProps> = ({film, openPage}) => {
     const [anchorEl, setAnchorEl] = React.useState<Element | ((element: Element) => Element) | null | undefined>(null);
 
     const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -29,22 +36,14 @@ const FilmCard: React.FunctionComponent<FilmCardProps> = ({film}) => {
         setAnchorEl(null);
     };
 
-    const [showEditModal, setShowEditModal] = useState(false);
-
-    const toggleEditModal = () => {
-        setShowEditModal(!showEditModal);
-    };
+    const [showEditModal, toggleEditModal] = useModal();
 
     const handleEditButton = () => {
         toggleEditModal();
         handleClose();
     };
 
-    const [showDeleteModal, setShowDeleteModal] = useState(false);
-
-    const toggleDeleteModal = () => {
-        setShowDeleteModal(!showDeleteModal);
-    };
+    const [showDeleteModal, toggleDeleteModal] = useModal();
 
     const handleDeleteButton = () => {
         toggleDeleteModal();
@@ -53,7 +52,7 @@ const FilmCard: React.FunctionComponent<FilmCardProps> = ({film}) => {
 
     return (
         <div className="film-wrapper">
-            <img src={film.imageUrl} height="450" width="300"/>
+            <img src={film.imageUrl} height="450" width="300" onClick={() => openPage(film.id)}/>
             <div className="film-info">
                 <div className="film-info-left">
                     <div className="film-info-left-title">{film.title}</div>
