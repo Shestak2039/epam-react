@@ -1,7 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors());
 
 const ObjectId = require('mongodb').ObjectId;
 const MongoClient = require('mongodb').MongoClient;
@@ -9,7 +12,7 @@ MongoClient.connect(
     `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}.bhdd7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
     {useUnifiedTopology: true}
 ).then(client => {
-    console.log('Connected to Database')
+    console.log('Connected to Database');
     const db = client.db('movie-app');
     const moviesCollection = db.collection('movies');
 
@@ -29,7 +32,11 @@ MongoClient.connect(
     app.get('/movie', (req, res) => {
         moviesCollection.find().toArray()
             .then(result => {
-                res.send(result);
+                res.send(result.map(film => ({
+                    ...film,
+                    id: film._id,
+                    _id: undefined
+                })));
             })
             .catch(error => {
                 console.error(error);
@@ -41,7 +48,11 @@ MongoClient.connect(
         const movieQuery = {_id: new ObjectId(req.params.id)};
         moviesCollection.findOne(movieQuery)
             .then(result => {
-                res.send(result);
+                res.send({
+                    ...result,
+                    id: result._id,
+                    _id: undefined
+                });
             })
             .catch(error => {
                 console.error(error);

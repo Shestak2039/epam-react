@@ -1,11 +1,12 @@
 import React from 'react';
 
 import './films-list.scss';
-import FilmCard, { FilmCardModel } from './FilmCard/FilmCard';
+import FilmCard from './FilmCard/FilmCard';
+import { FilmCardModel } from '../../models/film-card.model';
 
 export interface FilmsListProps {
     films: FilmCardModel[];
-    openPage: (id: number) => void;
+    openPage: (id: string) => void;
 }
 
 const FilmsList: React.FunctionComponent<FilmsListProps> = ({films, openPage}) => {
