@@ -1,5 +1,9 @@
 @import "../../../styles/colors";
 
+.form-element {
+  margin-top: 10px;
+}
+
 .label {
   color: $primary-color;
   margin-bottom: 5px;
@@ -12,4 +16,8 @@
   border: 0;
   color: #ffffff;
   padding: 10px;
+}
+
+.error {
+  color: $error-color;
 }

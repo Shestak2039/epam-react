@@ -16,12 +16,17 @@
 
 .select {
   border: 0;
-  background-color: #00000000;
+  background-color: $input-color;
+  height: 43px;
   color: $default-text-color;
   font-size: 16px;
   width: 100%;
+}
 
-  .select-option {
-    color: $secondary-color;
-  }
+.form-element {
+  margin-top: 10px;
+}
+
+.error {
+  color: $error-color;
 }

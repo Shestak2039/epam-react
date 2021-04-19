@@ -3,6 +3,7 @@ import React from 'react';
 import './fill-form-select.scss';
 
 import { SortOptionModel } from '../../SortingFilms/SortingByDate/Filter';
+import { useField } from 'formik';
 
 export interface FillFormSelectProps {
     title: string;
@@ -10,21 +11,17 @@ export interface FillFormSelectProps {
     setOptions: (selectedId: number) => void;
 }
 
-const FillFormSelect: React.FunctionComponent<FillFormSelectProps> = ({title, options, setOptions}) => {
+const FillFormSelect: React.FunctionComponent<any> = ({ label, ...props }) => {
+    const [field, meta] = useField(props);
     return (
-        <>
-            <h3 className="label">{title}</h3>
-            <div className="input-select">
-                <select
-                    defaultValue={options.find(option => option.isSelected)?.id}
-                    onChange={(event) => setOptions(+event.target.value)}
-                    className="select"
-                >
-                    {options.map(option => <option className="select-option" key={option.id} value={option.id}>{option.name}</option>)}
-                </select>
-            </div>
-        </>
-    )
+        <div className="form-element">
+            <label htmlFor={props.id || props.name} className={'label'}>{label}</label>
+            <select {...field} {...props} className={'select'}/>
+            {meta.touched && meta.error ? (
+                <div className="error">{meta.error}</div>
+            ) : null}
+        </div>
+    );
 };
 
 export default FillFormSelect;
