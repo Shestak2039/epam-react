@@ -10,6 +10,7 @@ import FillFormSelect from './FillFormSelect/FillFormSelect';
 import { connect } from 'react-redux';
 import { FilmCardModel } from '../../models/film-card.model';
 import { createFilmAsync, updateFilmAsync } from '../../store/actions/film-actions';
+import { useFormik } from 'formik';
 
 const mockGenres: GenreModel[] = [
     {id: 1, name: 'ALL', isSelected: true},
@@ -28,6 +29,16 @@ interface FilmFormProps {
 }
 
 const FilmForm: React.FunctionComponent<FilmFormProps> = ({createFilm, updateFilm, closeModal, filmInfo, isUpdatingForm}) => {
+    const formik = useFormik({
+        initialValues: {
+            title: '',
+            date: '',
+            movieURL: '',
+            overview: '',
+            rating: ''
+        },
+        onSubmit: (values) => console.log('values', values)
+    });
     const [title, setTitle] = React.useState(filmInfo?.title || '');
     const handleTitleChange = ((newValue: string) => {
         setTitle(newValue);
