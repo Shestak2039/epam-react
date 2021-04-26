@@ -5,13 +5,14 @@ import './button.scss';
 interface ButtonProps {
     title: string;
     primary: boolean;
+    type?: 'submit';
     action?: () => void;
 }
 
-const Button: React.FunctionComponent<ButtonProps> = ({title, primary, action}) => (
-    <div className={primary ? 'button primary' : 'button default'} onClick={() => action && action()}>
+const Button: React.FunctionComponent<ButtonProps> = ({title, primary, action, type}) => (
+    <button className={primary ? 'button primary' : 'button default'} onClick={() => action && action()} type={type}>
         {title}
-    </div>
+    </button>
 );
 
 export default Button;
