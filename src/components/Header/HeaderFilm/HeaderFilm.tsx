@@ -1,12 +1,12 @@
 import React from 'react';
 
 import './header-film.scss';
-import { FilmCardModel } from '../../FilmsList/FilmCard/FilmCard';
 import Button from '../../common/Button/Button';
+import { FilmCardModel } from '../../../models/film-card.model';
 
 export interface HeaderFilmProps {
     film: FilmCardModel;
-    openPage: (id: number | undefined) => void;
+    openPage: (id: string | undefined) => void;
 }
 
 const HeaderFilm: React.FunctionComponent<HeaderFilmProps> = (
@@ -25,7 +25,7 @@ const HeaderFilm: React.FunctionComponent<HeaderFilmProps> = (
                     </div>
                     <div className="header-film-info-genres">{genres.join(', ')}</div>
                     <div className="header-film-info-year-and-duration">
-                        <div className="header-film-info-year">{year}</div>
+                        <div className="header-film-info-year">{year.split('-')[0]}</div>
                         <div className="header-film-info-duration">{durationInMinutes + 'min'}</div>
                     </div>
                     <div className="header-film-info-overview">{overview}</div>

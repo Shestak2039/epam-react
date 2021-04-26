@@ -24,7 +24,7 @@ const HeaderSearch: React.FunctionComponent = () => {
             </nav>
             {showModal ? (
                 <Modal onClose={toggleModal}>
-                    <FilmForm/>
+                    <FilmForm closeModal={toggleModal}/>
                 </Modal>
             ) : null}
         </div>

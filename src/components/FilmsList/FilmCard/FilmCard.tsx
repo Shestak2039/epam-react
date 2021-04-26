@@ -8,21 +8,11 @@ import FilmForm from '../../FilmForm/FilmForm';
 import DeleteFilmModal from '../../DeleteFilmForm/DeleteFilmModal';
 
 import { useModal } from '../../../custom-hooks/modal.hook';
-
-export interface FilmCardModel {
-    id: number;
-    title: string;
-    genres: string[];
-    year: number;
-    imageUrl: string;
-    rating: number;
-    durationInMinutes: number;
-    overview: string;
-}
+import { FilmCardModel } from '../../../models/film-card.model';
 
 export interface FilmCardProps {
     film: FilmCardModel;
-    openPage: (id: number) => void;
+    openPage: (id: string) => void;
 }
 
 const FilmCard: React.FunctionComponent<FilmCardProps> = ({film, openPage}) => {
@@ -52,14 +42,14 @@ const FilmCard: React.FunctionComponent<FilmCardProps> = ({film, openPage}) => {
 
     return (
         <div className="film-wrapper">
-            <img src={film.imageUrl} height="450" width="300" onClick={() => openPage(film.id)}/>
+            <img src={film.imageUrl} height="450" width="300" onClick={() => openPage(film.id || '')}/>
             <div className="film-info">
                 <div className="film-info-left">
                     <div className="film-info-left-title">{film.title}</div>
                     <div className="film-info-left-genres">{film.genres.join(', ')}</div>
                 </div>
                 <div className="film-info-right">
-                    <div className="film-info-right-year">{film.year}</div>
+                    <div className="film-info-right-year">{film.year.split('-')[0]}</div>
                 </div>
             </div>
             <div className="additional-info-icon" onClick={handleClick}></div>
@@ -75,12 +65,12 @@ const FilmCard: React.FunctionComponent<FilmCardProps> = ({film, openPage}) => {
             </Menu>
             {showEditModal ? (
                 <Modal onClose={toggleEditModal}>
-                    <FilmForm />
+                    <FilmForm closeModal={toggleEditModal} filmInfo={film} isUpdatingForm={true}/>
                 </Modal>
             ) : null}
             {showDeleteModal ? (
                 <Modal onClose={toggleDeleteModal}>
-                    <DeleteFilmModal />
+                    <DeleteFilmModal filmId={film.id || ''} closeModal={toggleDeleteModal}/>
                 </Modal>
             ) : null}
         </div>
