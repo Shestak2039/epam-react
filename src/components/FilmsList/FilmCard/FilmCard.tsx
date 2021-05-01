@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './film-card.scss';
 
@@ -12,10 +13,9 @@ import { FilmCardModel } from '../../../models/film-card.model';
 
 export interface FilmCardProps {
     film: FilmCardModel;
-    openPage: (id: string) => void;
 }
 
-const FilmCard: React.FunctionComponent<FilmCardProps> = ({film, openPage}) => {
+const FilmCard: React.FunctionComponent<FilmCardProps> = ({film}) => {
     const [anchorEl, setAnchorEl] = React.useState<Element | ((element: Element) => Element) | null | undefined>(null);
 
     const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -42,7 +42,9 @@ const FilmCard: React.FunctionComponent<FilmCardProps> = ({film, openPage}) => {
 
     return (
         <div className="film-wrapper">
-            <img src={film.imageUrl} height="450" width="300" onClick={() => openPage(film.id || '')}/>
+            <Link to={`/film/${film.id}`}>
+                <img src={film.imageUrl} height="450" width="300" />
+            </Link>
             <div className="film-info">
                 <div className="film-info-left">
                     <div className="film-info-left-title">{film.title}</div>
@@ -52,7 +54,7 @@ const FilmCard: React.FunctionComponent<FilmCardProps> = ({film, openPage}) => {
                     <div className="film-info-right-year">{film.year.split('-')[0]}</div>
                 </div>
             </div>
-            <div className="additional-info-icon" onClick={handleClick}></div>
+            <div className="additional-info-icon" onClick={handleClick} />
             <Menu
                 id="simple-menu"
                 anchorEl={anchorEl}

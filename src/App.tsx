@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 
 import { FilmCardModel } from './models/film-card.model';
 
@@ -12,6 +13,8 @@ import Footer from './components/Footer/Footer';
 import ErrorBoundary from './components/common/ErrorBoundary/ErrorBoundary';
 import HeaderSearch from './components/Header/HeaderSearch/HeaderSearch';
 import HeaderFilm from './components/Header/HeaderFilm/HeaderFilm';
+import NoMatch from './components/NoMatch/NoMatch';
+import NoFilmsFound from './components/NoFilmsFound/NoFilmsFound';
 
 interface AppProps {
     filmsProp: FilmCardModel[];
@@ -21,24 +24,58 @@ const App: React.FunctionComponent<AppProps> = ({filmsProp}) => {
     const [films, setFilms] = React.useState(filmsProp);
     const [page, setPage] = React.useState<FilmCardModel | undefined>(undefined);
 
-    const openPage = (id: string | undefined) => {
-        setPage(films.find(film => film.id === id));
-    };
-
     return (
-        <ErrorBoundary>
-            <Wrapper>
-                <Header>
-                    {page ? <HeaderFilm film={page} openPage={openPage}/> : <HeaderSearch />}
-                </Header>
-                <Main>
-                    <SortingFilms />
-                    <FilmsList films={filmsProp} openPage={openPage}/>
-                </Main>
-                <Footer />
-            </Wrapper>
-        </ErrorBoundary>
-    )
+        <Router>
+            <ErrorBoundary>
+                <Wrapper>
+                    <Switch>
+                        <Route path="/home">
+                            <Header>
+                                <HeaderSearch />
+                            </Header>
+                            <Main>
+                                <SortingFilms/>
+                                <FilmsList films={filmsProp}/>
+                            </Main>
+                            <Footer/>
+                        </Route>
+                        <Route path="/film/:filmId">
+                            <Header>
+                                <HeaderFilm films={filmsProp}/>
+                            </Header>
+                            <Main>
+                                <SortingFilms/>
+                                <FilmsList films={filmsProp}/>
+                            </Main>
+                            <Footer/>
+                        </Route>
+                        <Route path="/not-found">
+                            <Header>
+                                <HeaderSearch />
+                            </Header>
+                            <Main>
+                                <SortingFilms/>
+                                <NoFilmsFound />
+                            </Main>
+                            <Footer/>
+                        </Route>
+                        <Route path="/search/:searchQuery">
+                            <Header>
+                                <HeaderSearch />
+                            </Header>
+                            <Main>
+                                <SortingFilms/>
+                                <FilmsList films={filmsProp}/>
+                            </Main>
+                            <Footer/>
+                        </Route>
+                        <Redirect exact from="/" to="/home" />
+                        <Route path="*" component={NoMatch} />
+                    </Switch>
+                </Wrapper>
+            </ErrorBoundary>
+        </Router>
+    );
 };
 
 const mapStateToProps = (state: any) => {

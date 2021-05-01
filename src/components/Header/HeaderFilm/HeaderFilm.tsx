@@ -1,20 +1,27 @@
 import React from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 import './header-film.scss';
 import Button from '../../common/Button/Button';
 import { FilmCardModel } from '../../../models/film-card.model';
 
 export interface HeaderFilmProps {
-    film: FilmCardModel;
-    openPage: (id: string | undefined) => void;
+    films: FilmCardModel[];
 }
 
-const HeaderFilm: React.FunctionComponent<HeaderFilmProps> = (
-    {film: {title, imageUrl, rating, genres, year, durationInMinutes, overview}, openPage}) => {
+const HeaderFilm: React.FunctionComponent<HeaderFilmProps> = ({films}) => {
+    const { filmId } = useParams<{filmId: string}>();
+    
+    const {
+        title = '', imageUrl = '', rating = 0, genres = [], year = '', durationInMinutes = 0, overview = ''
+    } = films.find(film => filmId === film.id) as FilmCardModel || {};
+    
     return (
         <div className="header-background">
             <div className="header-top">
-                <Button title={'Search'} primary={false} action={() => openPage(undefined)}/>
+                <Link to="/home">
+                    <Button title={'Search'} primary={false} />
+                </Link>
             </div>
             <div className="header-film">
                 <img className="header-film-image" src={imageUrl} height="350" width="250" />

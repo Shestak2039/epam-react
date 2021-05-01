@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './header-search.scss';
 
@@ -7,9 +7,12 @@ import Search from '../../Search/Search';
 import Modal from '../../common/Modal/Modal';
 import FilmForm from '../../FilmForm/FilmForm';
 import { useModal } from '../../../custom-hooks/modal.hook';
+import { Link } from 'react-router-dom';
 
 const HeaderSearch: React.FunctionComponent = () => {
     const [showModal, toggleModal] = useModal();
+    const [searchQuery, setSearchQuery] = useState('');
+    
     return (
         <div className="header-search">
             <div className="header-top">
@@ -18,8 +21,10 @@ const HeaderSearch: React.FunctionComponent = () => {
             <nav className="header-nav">
                 <div className="header-nav-title">FIND YOUR MOVIE</div>
                 <div className="search-bar">
-                    <Search/>
-                    <Button title={'SEARCH'} primary={true}/>
+                    <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
+                    <Link to={`search/${searchQuery}`}>
+                        <Button title={'SEARCH'} primary={true}/>
+                    </Link>
                 </div>
             </nav>
             {showModal ? (
