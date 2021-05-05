@@ -10,7 +10,7 @@ import FillFormSelect from './FillFormSelect/FillFormSelect';
 import { connect } from 'react-redux';
 import { FilmCardModel } from '../../models/film-card.model';
 import { createFilmAsync, updateFilmAsync } from '../../store/actions/film-actions';
-import { useFormik, Formik, Form, FormikValues } from 'formik';
+import { Formik, Form, FormikValues } from 'formik';
 import * as Yup from 'yup';
 
 const mockGenres: GenreModel[] = [
@@ -30,7 +30,7 @@ interface FilmFormProps {
 }
 
 const FilmForm: React.FunctionComponent<FilmFormProps> = ({createFilm, updateFilm, closeModal, filmInfo, isUpdatingForm}) => {
-    const handleSubmitButton = (values: FormikValues) => {
+    const handleSubmitButton = (values: FormikValues = {}) => {
         const {title, genres, date, movieURL, rating, runtime, overview} = values;
         if (isUpdatingForm) {
             updateFilm(filmInfo?.id || '', {
@@ -79,7 +79,7 @@ const FilmForm: React.FunctionComponent<FilmFormProps> = ({createFilm, updateFil
             onSubmit={(values) => handleSubmitButton(values)}
         >
             {({values, resetForm}) => (
-                <Form className="film-form">
+                <Form className="film-form" data-testid="form">
                     <FillFormInput name="title" type="text" placeholder={'Select Title'} label={'TITLE'}/>
                     <FillFormInput name="date" type="date" placeholder={'Select Date'} label={'RELEASE DATE'}/>
                     <FillFormInput name="movieURL" type="text" placeholder={'Movie URL here'} label={'MOVIE URL'}/>

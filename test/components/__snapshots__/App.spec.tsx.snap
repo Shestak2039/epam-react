@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders Footer snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="background"
+  >
+    <div
+      class="wrapper"
+    >
+      <header
+        class="header"
+      >
+        <div
+          class="header-search"
+        >
+          <div
+            class="header-top"
+          >
+            <button
+              class="button default"
+            >
+              + ADD MOVIE
+            </button>
+          </div>
+          <nav
+            class="header-nav"
+          >
+            <div
+              class="header-nav-title"
+            >
+              FIND YOUR MOVIE
+            </div>
+            <div
+              class="search-bar"
+            >
+              <div
+                class="search"
+              >
+                <input
+                  class="search-input"
+                  id="search-input"
+                  name="search-input"
+                  placeholder="What do you want to watch?"
+                  value=""
+                />
+              </div>
+              <a
+                href="/search/"
+              >
+                <button
+                  class="button primary"
+                >
+                  SEARCH
+                </button>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <main
+        class="main"
+      >
+        <div
+          class="sorting-bar"
+        >
+          <ul
+            class="genres"
+          >
+            <li
+              class="genre selected"
+            >
+              ALL
+            </li>
+            <li
+              class="genre"
+            >
+              DOCUMENTARY
+            </li>
+            <li
+              class="genre"
+            >
+              DRAMA
+            </li>
+            <li
+              class="genre"
+            >
+              HORROR
+            </li>
+            <li
+              class="genre"
+            >
+              THRILLER
+            </li>
+          </ul>
+          <div
+            class="filter"
+          >
+            <div
+              class="filter-name"
+            >
+              SORT BY
+            </div>
+            <select
+              class="filter-select"
+            >
+              <option
+                class="filter-select-option"
+                selected=""
+                value="1"
+              >
+                RATING
+              </option>
+              <option
+                class="filter-select-option"
+                value="2"
+              >
+                YEAR
+              </option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="films-wrapper"
+        >
+          <div
+            class="count-movies"
+          >
+            0 movies found
+          </div>
+          <div
+            class="films"
+          />
+        </div>
+      </main>
+      <footer
+        class="footer"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
