@@ -1,0 +1,12 @@
+.no-match {
+  display: flex;
+  justify-content: center;
+  flex-direction: column; 
+  height: 100vh;
+  background-color: white;
+  align-items: center;
+}
+
+.no-match-link {
+  text-decoration: none;
+}

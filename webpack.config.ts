@@ -11,7 +11,8 @@ const config: webpack.Configuration = {
     entry: path.join(__dirname, 'src/index.tsx'),
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, './build')
+        path: path.resolve(__dirname, './build'),
+        publicPath: '/'
     },
     mode: process.env.NODE_ENV as 'production' | 'development',
     optimization: {
@@ -70,7 +71,8 @@ const config: webpack.Configuration = {
     devServer: {
         contentBase: path.join(__dirname, 'build'),
         compress: true,
-        port: 3000
+        port: 3000,
+        historyApiFallback: true
     }
 };
 
