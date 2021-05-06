@@ -20,6 +20,7 @@ const Filter: React.FunctionComponent<FilterProps> = ({options, setOptions}) => 
             defaultValue={options.find(option => option.isSelected)?.id}
             onChange={(event) => setOptions(+event.target.value)}
             className="filter-select"
+            role="listbox"
         >
             {options.map(option => <option className="filter-select-option" key={option.id} value={option.id}>{option.name}</option>)}
         </select>

@@ -54,7 +54,7 @@ const FilmCard: React.FunctionComponent<FilmCardProps> = ({film}) => {
                     <div className="film-info-right-year">{film.year.split('-')[0]}</div>
                 </div>
             </div>
-            <div className="additional-info-icon" onClick={handleClick} />
+            <div className="additional-info-icon" onClick={handleClick} data-testid="additional-icon"/>
             <Menu
                 id="simple-menu"
                 anchorEl={anchorEl}
@@ -62,8 +62,8 @@ const FilmCard: React.FunctionComponent<FilmCardProps> = ({film}) => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem onClick={handleEditButton}>Edit</MenuItem>
-                <MenuItem onClick={handleDeleteButton}>Delete</MenuItem>
+                <MenuItem onClick={handleEditButton} data-testid="edit-button">Edit</MenuItem>
+                <MenuItem onClick={handleDeleteButton} data-testid="delete-button">Delete</MenuItem>
             </Menu>
             {showEditModal ? (
                 <Modal onClose={toggleEditModal}>

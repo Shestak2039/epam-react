@@ -10,7 +10,7 @@ interface ButtonProps {
 }
 
 const Button: React.FunctionComponent<ButtonProps> = ({title, primary, action, type}) => (
-    <button className={primary ? 'button primary' : 'button default'} onClick={() => action && action()} type={type}>
+    <button className={primary ? 'button primary' : 'button default'} onClick={() => action && action()} type={type} data-testid={title}>
         {title}
     </button>
 );

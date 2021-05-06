@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoMatch renders NoMatch snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="search"
+  >
+    <input
+      class="search-input"
+      id="search-input"
+      name="search-input"
+      placeholder="What do you want to watch?"
+      value="mockSearchQuery"
+    />
+  </div>
+</DocumentFragment>
+`;

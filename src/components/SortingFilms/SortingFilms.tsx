@@ -13,20 +13,20 @@ export interface SortingFilmsProps {
     filterFilms: (genreName: string) => void;
 }
 
-let mockGenres: GenreModel[] = [
-    {id: 1, name: 'ALL', isSelected: true},
-    {id: 2, name: 'DOCUMENTARY', isSelected: false},
-    {id: 3, name: 'DRAMA', isSelected: false},
-    {id: 4, name: 'HORROR', isSelected: false},
-    {id: 5, name: 'THRILLER', isSelected: false}
-];
-
-let mockOptions: SortOptionModel[] = [
-    {id: 1, name: SortOptions.RATING, isSelected: true},
-    {id: 2, name: SortOptions.YEAR, isSelected: false},
-];
-
 const SortingFilms: React.FunctionComponent<SortingFilmsProps> = ({sortFilms, filterFilms}) => {
+    let mockGenres: GenreModel[] = [
+        {id: 1, name: 'ALL', isSelected: true},
+        {id: 2, name: 'DOCUMENTARY', isSelected: false},
+        {id: 3, name: 'DRAMA', isSelected: false},
+        {id: 4, name: 'HORROR', isSelected: false},
+        {id: 5, name: 'THRILLER', isSelected: false}
+    ];
+
+    let mockOptions: SortOptionModel[] = [
+        {id: 1, name: SortOptions.RATING, isSelected: true},
+        {id: 2, name: SortOptions.YEAR, isSelected: false},
+    ];
+    
     const [genres, setGenres] = useState(mockGenres);
 
     const changeSelectedGenre = (newSelectedId: number) => {

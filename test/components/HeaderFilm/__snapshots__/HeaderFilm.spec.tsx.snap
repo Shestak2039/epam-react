@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderFilm renders HeaderFilm snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="header-background"
+  >
+    <div
+      class="header-top"
+    >
+      <a
+        href="/home"
+      >
+        <button
+          class="button default"
+          data-testid="Search"
+        >
+          Search
+        </button>
+      </a>
+    </div>
+    <div
+      class="header-film"
+    >
+      <img
+        class="header-film-image"
+        height="350"
+        src=""
+        width="250"
+      />
+      <div
+        class="header-film-info"
+      >
+        <div
+          class="header-film-info-title-and-rating"
+        >
+          <div
+            class="header-film-info-title"
+          />
+          <div
+            class="header-film-info-rating"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="header-film-info-genres"
+        />
+        <div
+          class="header-film-info-year-and-duration"
+        >
+          <div
+            class="header-film-info-year"
+          />
+          <div
+            class="header-film-info-duration"
+          >
+            0min
+          </div>
+        </div>
+        <div
+          class="header-film-info-overview"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

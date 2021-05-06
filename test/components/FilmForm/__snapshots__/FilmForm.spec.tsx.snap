@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilmForm renders FillForm snapshot 1`] = `
+<DocumentFragment>
+  <form
+    action="#"
+    class="film-form"
+    data-testid="form"
+  >
+    <div
+      class="form-element"
+    >
+      <label
+        class="label"
+        for="title"
+      >
+        TITLE
+      </label>
+      <input
+        class="input"
+        name="title"
+        placeholder="Select Title"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="form-element"
+    >
+      <label
+        class="label"
+        for="date"
+      >
+        RELEASE DATE
+      </label>
+      <input
+        class="input"
+        name="date"
+        placeholder="Select Date"
+        type="date"
+        value=""
+      />
+    </div>
+    <div
+      class="form-element"
+    >
+      <label
+        class="label"
+        for="movieURL"
+      >
+        MOVIE URL
+      </label>
+      <input
+        class="input"
+        name="movieURL"
+        placeholder="Movie URL here"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="form-element"
+    >
+      <label
+        class="label"
+        for="genres"
+      >
+        GENRE
+      </label>
+      <select
+        class="select"
+        name="genres"
+      >
+        <option
+          value=""
+        >
+          Select a genre
+        </option>
+        <option
+          value="ALL"
+        >
+          ALL
+        </option>
+        <option
+          value="DOCUMENTARY"
+        >
+          DOCUMENTARY
+        </option>
+        <option
+          value="COMEDY"
+        >
+          COMEDY
+        </option>
+        <option
+          value="HORROR"
+        >
+          HORROR
+        </option>
+        <option
+          value="CRIME"
+        >
+          CRIME
+        </option>
+      </select>
+    </div>
+    <div
+      class="form-element"
+    >
+      <label
+        class="label"
+        for="overview"
+      >
+        OVERVIEW
+      </label>
+      <input
+        class="input"
+        name="overview"
+        placeholder="Runtime here"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="form-element"
+    >
+      <label
+        class="label"
+        for="runtime"
+      >
+        RUNTIME
+      </label>
+      <input
+        class="input"
+        name="runtime"
+        placeholder="Overview here"
+        type="number"
+        value="0"
+      />
+    </div>
+    <div
+      class="form-element"
+    >
+      <label
+        class="label"
+        for="rating"
+      >
+        RATING
+      </label>
+      <input
+        class="input"
+        name="rating"
+        placeholder="Rating here"
+        type="number"
+        value="0"
+      />
+    </div>
+    <div
+      class="buttons-area"
+    >
+      <button
+        class="button default"
+        data-testid="RESET"
+      >
+        RESET
+      </button>
+      <button
+        class="button primary"
+        data-testid="SUBMIT"
+        type="submit"
+      >
+        SUBMIT
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilmsList renders FilmsList snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="films-wrapper"
+  >
+    <div
+      class="count-movies"
+    >
+      1 movies found
+    </div>
+    <div
+      class="films"
+    >
+      <div
+        class="film-wrapper"
+      >
+        <a
+          href="/film/id"
+        >
+          <img
+            height="450"
+            src="imageUrl"
+            width="300"
+          />
+        </a>
+        <div
+          class="film-info"
+        >
+          <div
+            class="film-info-left"
+          >
+            <div
+              class="film-info-left-title"
+            >
+              title
+            </div>
+            <div
+              class="film-info-left-genres"
+            />
+          </div>
+          <div
+            class="film-info-right"
+          >
+            <div
+              class="film-info-right-year"
+            >
+              year
+            </div>
+          </div>
+        </div>
+        <div
+          class="additional-info-icon"
+          data-testid="additional-icon"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
