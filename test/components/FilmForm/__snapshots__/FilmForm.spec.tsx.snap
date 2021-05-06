@@ -159,11 +159,13 @@ exports[`FilmForm renders FillForm snapshot 1`] = `
     >
       <button
         class="button default"
+        data-testid="RESET"
       >
         RESET
       </button>
       <button
         class="button primary"
+        data-testid="SUBMIT"
         type="submit"
       >
         SUBMIT

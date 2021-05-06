@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoMatch renders NoMatch snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="no-match"
+  >
+    <h2>
+      No match for 
+      <code>
+        /
+      </code>
+    </h2>
+    <a
+      class="no-match-link"
+      href="/"
+    >
+      <button
+        class="button primary"
+        data-testid="GO BACK TO HOME"
+      >
+        GO BACK TO HOME
+      </button>
+    </a>
+  </div>
+</DocumentFragment>
+`;

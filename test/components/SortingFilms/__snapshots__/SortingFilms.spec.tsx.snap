@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortingFilms renders SortingFilms snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sorting-bar"
+  >
+    <ul
+      class="genres"
+    >
+      <li
+        class="genre selected"
+        data-testid="1"
+      >
+        ALL
+      </li>
+      <li
+        class="genre"
+        data-testid="2"
+      >
+        DOCUMENTARY
+      </li>
+      <li
+        class="genre"
+        data-testid="3"
+      >
+        DRAMA
+      </li>
+      <li
+        class="genre"
+        data-testid="4"
+      >
+        HORROR
+      </li>
+      <li
+        class="genre"
+        data-testid="5"
+      >
+        THRILLER
+      </li>
+    </ul>
+    <div
+      class="filter"
+    >
+      <div
+        class="filter-name"
+      >
+        SORT BY
+      </div>
+      <select
+        class="filter-select"
+        role="listbox"
+      >
+        <option
+          class="filter-select-option"
+          selected=""
+          value="1"
+        >
+          RATING
+        </option>
+        <option
+          class="filter-select-option"
+          value="2"
+        >
+          YEAR
+        </option>
+      </select>
+    </div>
+  </div>
+</DocumentFragment>
+`;

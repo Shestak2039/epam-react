@@ -15,7 +15,7 @@ export interface SortingByGenreProps {
 
 const SortingByGenre: React.FunctionComponent<SortingByGenreProps> = ({genres, setGenres}) => (
     <ul className="genres">
-        {genres.map((genre) => <li key={genre.id} className={genre.isSelected ? 'genre selected' : 'genre'} onClick={() => setGenres(genre.id)}>{genre.name}</li>)}
+        {genres.map((genre) => <li data-testid={genre.id} key={genre.id} className={genre.isSelected ? 'genre selected' : 'genre'} onClick={() => setGenres(genre.id)}>{genre.name}</li>)}
     </ul>
 );
 

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Footer renders Footer snapshot 1`] = `
+exports[`App renders App snapshot 1`] = `
 <DocumentFragment>
   <div
     class="background"
@@ -19,6 +19,7 @@ exports[`Footer renders Footer snapshot 1`] = `
           >
             <button
               class="button default"
+              data-testid="+ ADD MOVIE"
             >
               + ADD MOVIE
             </button>
@@ -50,6 +51,7 @@ exports[`Footer renders Footer snapshot 1`] = `
               >
                 <button
                   class="button primary"
+                  data-testid="SEARCH"
                 >
                   SEARCH
                 </button>
@@ -69,26 +71,31 @@ exports[`Footer renders Footer snapshot 1`] = `
           >
             <li
               class="genre selected"
+              data-testid="1"
             >
               ALL
             </li>
             <li
               class="genre"
+              data-testid="2"
             >
               DOCUMENTARY
             </li>
             <li
               class="genre"
+              data-testid="3"
             >
               DRAMA
             </li>
             <li
               class="genre"
+              data-testid="4"
             >
               HORROR
             </li>
             <li
               class="genre"
+              data-testid="5"
             >
               THRILLER
             </li>
@@ -103,6 +110,7 @@ exports[`Footer renders Footer snapshot 1`] = `
             </div>
             <select
               class="filter-select"
+              role="listbox"
             >
               <option
                 class="filter-select-option"

@@ -76,7 +76,7 @@ const FilmForm: React.FunctionComponent<FilmFormProps> = ({createFilm, updateFil
                 runtime: Yup.number().required(),
                 rating: Yup.number().max(5, 'Max value is 5').min(0).required()
             })}
-            onSubmit={(values) => handleSubmitButton(values)}
+            onSubmit={(values) => {}}
         >
             {({values, resetForm}) => (
                 <Form className="film-form" data-testid="form">
@@ -96,7 +96,7 @@ const FilmForm: React.FunctionComponent<FilmFormProps> = ({createFilm, updateFil
                     <FillFormInput name="rating" type="number" placeholder={'Rating here'} label={'RATING'}/>
                     <div className="buttons-area">
                         <Button title={'RESET'} primary={false} action={() => resetForm()}/>
-                        <Button title={'SUBMIT'} primary={true} type={'submit'} />
+                        <Button title={'SUBMIT'} primary={true} type={'submit'} action={() => handleSubmitButton(values)}/>
                     </div>
                 </Form>
             )}

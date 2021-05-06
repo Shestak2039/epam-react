@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Shestak2039/epam-react#readme",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
+    "@testing-library/user-event": "^13.1.8",
     "@types/react-redux": "^7.1.16",
     "@types/redux": "^3.6.0",
     "axios": "^0.21.1",

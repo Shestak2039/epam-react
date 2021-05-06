@@ -6,8 +6,8 @@ import { Provider } from 'react-redux';
 import store from '../../src/store/store';
 
 
-describe('Footer', () => {
-    test('renders Footer snapshot', () => {
+describe('App', () => {
+    test('renders App snapshot', () => {
         const { asFragment } = render(<Provider store={store}><App /></Provider>);
 
         expect(asFragment()).toMatchSnapshot();
